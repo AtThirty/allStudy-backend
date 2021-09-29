@@ -3,9 +3,6 @@ from .models import User
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed, NotFound, ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.utils.encoding import force_str
-from django.utils.http import urlsafe_base64_decode
 
 
 class RegisterSerializer(serializers.ModelSerializer):
