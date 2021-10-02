@@ -63,7 +63,7 @@ def AccountSearchAPI(request, *args, **kwargs):
         search_results = User.objects.filter(username__startswith=search_query).distinct()
         accounts = []
         for account in search_results:
-            accounts.append((account.username, -1))
+            accounts.append({"profile":account.profile_image.url, "username":account.username, "status":-1})
         context['accounts'] = accounts
     return Response(context, status=status.HTTP_200_OK)
 
